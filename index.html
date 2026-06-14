@@ -20,7 +20,12 @@ document.getElementById('opts').innerHTML=quiz[i].o.map((x,n)=>`<label><input ty
 }
 function nextQ(){
 let c=document.querySelector('input[name="a"]:checked');
-if(c && +c.value===quiz[i].a)s++;
+if(c && +c.value===quiz[i].a){
+    alert("✅ Correct Answer");
+    s++;
+}else{
+    alert("❌ Wrong Answer");
+}
 i++;
 if(i>=quiz.length){
 document.body.innerHTML=`<h1>Finished</h1><h2>Score: ${s}/${quiz.length}</h2>`;return;
